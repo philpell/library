@@ -67,13 +67,18 @@ function addNewBook(){
 
 //Create search function and add event listener to search button
 function searchName() {
-  let input = document.getElementById('searchInput').value
-  if (input != "") {
-    let bookTitle = library.find(Book => Book.name === input);
-      if(bookTitle === undefined){
-        console.log(`This book is not in the library`)
-    } else {
-        console.log(bookTitle);
+  let input = document.getElementById('searchInput').value //Take the search bar input
+  if (input != "") {  
+    let bookTitle = library.find(Book => Book.name === input); //Check search input against titles in library
+      if(bookTitle != undefined) //if search input matches a title, show book details
+        console.log(bookTitle); 
+      else if(bookTitle === undefined){ //if not, check the search input against authors
+        let bookWriter = library.filter(Book => Book.author === input); 
+          if(bookWriter.length === 0){ //if no match against title or author, state no matches
+            console.log(`This book is not in the library`)
+        } else { //if search input matches author, show array of authors books
+            console.log(bookWriter); 
+}
 }}} 
 
 searchBtn.addEventListener("click", (e) => {

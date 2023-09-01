@@ -1,129 +1,217 @@
 * {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    background-color: var(--contrastBlue);
-  }
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  background-color: var(--contrastBlue);
+}
  
-  :root {
-    --blue-color: #1c2939;
-    --logo-blue: #08595c;
-    --contrastBlue: rgb(14, 22, 35);
-    --brightBlue: #0184c9;
-    --odinGold: #dfb060;
-    --font-color: white;
-    --font-family: 'Calibri', Arial, 'Trebuchet MS', sans-serif, Helvetica, sans-serif;
-    --shadow: rgba(17, 24, 39, 0.35) 0px -2px 6px 0px inset;
-  }
- 
-  body {
-    background-color: var(--contrastBlue);
-    padding: 10px;
-  }
- 
-  .container {
-    display: grid;
-    grid-template-rows: 15vh 35vh 40vh 3vh;
-    grid-template-columns: repeat(3, 1fr);
-  }
- 
-  .header{
-    grid-row: 1 / 2;
-    height: 15%;
-  }
-
-  .logo {
-    background-image: url(images/CompellingLogoTen.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 10px 10px 0px 8px;
-    height: 10vh;
-    width: 35vh;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 2%;
-    left: 2%;
-  }
-
-  /* Set up for main form section */
-  fieldset {
-    font-family: var(--font-family);
-    color: var(--font-color);
-    font-size: 14px;
-    outline: 2px solid pink;
-    border: none;
-    border-radius: 25px;
-    line-height: 25px;
+:root {
+  --blue-color: #1c2939;
+  --logo-blue: #08595c;
+  --contrastBlue: rgb(14, 22, 35);
+  --brightBlue: #0184c9;
+  --odinGold: #dfb060;
+  --font-color: white;
+  --font-family: 'Calibri', Arial, 'Trebuchet MS', sans-serif, Helvetica, sans-serif;
+  --shadow: rgba(17, 24, 39, 0.35) 0px -2px 6px 0px inset;
 }
 
+body {
+  background-color: var(--contrastBlue);
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 15vh 35vh 40vh 5vh;
+  grid-template-columns: repeat(3, 1fr);
+}
+ 
+.header{
+  grid-row: 1 / 2;
+  height: 15%;
+}
+
+.inputSection {
+  grid-row: 1 / 4;
+  grid-column: 3 / 4;
+}
+
+.logo {
+  background-image: url(images/CompellingLogoTen.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 10px 10px 0px 8px;
+  height: 15vh;
+  width: 45vh;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+/* Set up for main form section */
 legend{
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    margin-top: 10px;
 }
 
 h6{
   text-align: center;
   margin: 2px 0 7px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--font-color);
 }
 
-button {
-    align-items: center;
-    width: 100%;
-    height: 16%;
-    background-color: var(--blue-color);
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 20px;
-    border-radius: 25px;
-    color: var(--font-color);
+#showDialog {
+  background-color: var(--blue-color);
+  font-size: 35px;
+  font-weight: 700;
+  padding: 1px 10px;
+  border-radius: 25px;
+  color: var(--font-color);
+  position: absolute;
+  top: 3%;
+  right: 2%;
 }
 
-/* Formatting for selection of form sections */
+#searchBtn {
+  align-items: center;
+  background-color: var(--blue-color);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 7px 10px;
+  margin: 20px 0px 0px 10px;
+  border-radius: 10px;
+  color: var(--font-color);
+}
+
+#cancelBtn, #confirmBtn {
+  background-color: var(--blue-color);
+  font-size: 18px;
+  font-weight: 700;
+  width: 12vw;
+  padding: 7px 10px;
+  margin: 3pc 0pc 0pc 1pc;
+  border-radius: 10px;
+  color: var(--font-color);
+  position: relative;
+}
+
+/* Search bar formatting */
+#searchBar input[type=text] {
+  padding: 6px;
+  outline: var(--logo-blue) solid 3px;
+  font-size: 17px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+  
+#searchBar input[type=text]:active {
+  background-color: rgb(218, 218, 218);
+  color: white;
+}
+  
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */  
+  @media screen and (max-width: 600px) {
+    #searchBar input[type=text] {
+      float: none;
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+
+    #searchBar input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+  /* Formatting for selection of form sections */
   input {
     border: none;
     border-bottom: 2px solid rgb(75, 74, 87);
     transition: all 0.2s;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
-/* Set underline to blue */
+  /* Set underline to blue */
   input:focus {
     outline: none;
-    border-bottom: 2px solid var(--blue-color);
-  }
+    border-bottom: 2px solid var(--font-color);
+}
 
   label {
+    font-size: 12px;
     position: relative;
+    top: 10px;
     transition: all .3s ease-in;
+    line-height: 20px;
+    color: var(--font-color);
+    font-family: var(--font-family);
+}
+
+  #selectLabel {
+    font-size: 18px;
+    position: relative;
+    left: 15px;
+    top: 20px;
+    line-height: 20px;
+    color: var(--font-color);
+    font-family: var(--font-family);
   }
 
-  .checkList {
-    font-size: 20px;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 7fr 1fr;
-    gap: 0.1em;
-  }
+  select  {
+    font-size: 16px;
+    position: relative;
+    left: 35px;
+    line-height: 20px;
+    color: var(--font-color);
+    font-family: var(--font-family);
+    border-radius: 5px;
+}
 
-/* move label and change colour on input select */
+  dialog:modal {
+    position: absolute;
+    top: 10%;
+    left: 65%;
+    width: 27.5vw;
+    height: 65vh;
+    border-radius: 20px;
+    border: none;
+    align-items: center;
+    outline: var(--logo-blue) solid 6px;
+    user-select: text;
+    visibility: visible;
+    overflow: auto;
+}
+
+  /* move label and change colour on input select */
   .field {
     display: flex;
     flex-flow: column-reverse;
-  }
+    width: 25vw;
+    margin-left: 15px;
+}
 
   .field:focus-within label {
-    color: var(--blue-color);
+    color: var(--logo-blue);
     position: relative;
-    top: 0px;
     font-size: 14px;
-  }
+}
  
-/* Set label position and input format whilst placeholder is present*/
+  /* Set label position and input format whilst placeholder is present*/
   input:placeholder-shown + label {
     cursor: text;
     max-width: 66.66%;
@@ -132,43 +220,38 @@ button {
     text-overflow: ellipsis;
     transform-origin: left bottom;
     transform: translate(0, 1rem) scale(1.5);
-  }
+    
+}
 
-/* Hide the placeholder when the input is not focused. */
+  /* Hide the placeholder when the input is not focused. */
   ::-webkit-input-placeholder {
     opacity: 0;
     transition: inherit;
-  }
+}
 
-/* Show the placeholder when the input is focused. */
+  /* Show the placeholder when the input is focused. */
   input:focus::-webkit-input-placeholder {
     opacity: 1;
-  }
+}
 
   ::placeholder {
     font-size: 14px;
-  }
+}
 
-/* Lock label in place when placeholder replaced by text input */
+  /* Lock label in place when placeholder replaced by text input */
   input:not(:placeholder-shown) + label,
   input:focus + label {
     transform: translate(0, 0) scale(1);
     cursor: pointer;
-  }
+}
 
-/* Formatting of output table */
-  .outputSection {
-    grid-row: 3 / 4;
-    height: 45%;
-  }
-
-/* Footer formatting including github link and text formatting */
-.footer {
+  /* Footer formatting including github link and text formatting */
+  .footer {
     grid-row: 4 / 5;
-    margin: -10px;
+    grid-column: 1 / 4;
     background-color: var(--contrastBlue);
     height: 5%;
-  }
+}
  
   #githubLogo {
     position: absolute;
@@ -176,11 +259,11 @@ button {
     height: 4vh;
     background-blend-mode: lighten;
     border-radius: 50%;
-  }
+}
  
   h5 {
     position: absolute;
-    bottom: 1%;
+    bottom: 4%;
     right: 4%;
     font-size: 13px;
     visibility: hidden;
@@ -190,26 +273,26 @@ button {
     font-weight: 700;
     opacity: 0;
     transition: opacity 1s, visibility 1s;
-  }
+}
  
   .footer:hover h5 {
     visibility: visible;
     opacity: 1;
-  }
+}
  
   /* Set formatting for scroll bar when overflow occurs */
   ::-webkit-scrollbar {
     width: 8px;
-  }
+}
  
   ::-webkit-scrollbar-track {
     background: #0184c9;
-  }
+}
    
   ::-webkit-scrollbar-thumb {
     background: var(--blue-color);
     border-radius: 15px;
-  }
+}
  
   /* ::-webkit-scrollbar-thumb:hover {
     background: var(--logo-blue);

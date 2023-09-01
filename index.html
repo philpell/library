@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>                                                      
     <div class="container">
-        <!-- <div class="header">
+        <div class="header">
           <div class="logo"></div>
-        </div> -->               
+        </div>               
           <div id="searchBar">
-            <label for="searchInput">Search <i class="fa fa-search"></i>library</label>
-            <input id="searchInput" type="text" placeholder="Search">
+            <input id="searchInput" type="text" placeholder="Search...">
             <button id="searchBtn">Search</button>
         </div>   
         <div class="inputSection">
@@ -25,19 +24,19 @@
                     <h6>(Please complete all sections below)</h6>
                     <div class="bookData">
                         <div class="field">
-                            <label for="bookName">Name of book:</label>
                             <input type="text" name="bookName" id="bookName" placeholder="e.g. The Hobbit">
+                            <label for="bookName">Name of book:</label>
                         </div>
                         <div class="field">
-                            <label for="bookAuthor">Author's name:</label>
                             <input type="text" name="bookAuthor" id="bookAuthor" placeholder="e.g. J.R.R Tolkein">
-                        </div>
+                            <label for="bookAuthor">Author's name:</label>
+                          </div>
                         <div class="field">
-                            <label for="bookPages">Number of pages</label>
                             <input type="number" name="bookPages" id="bookPages" min="1" placeholder="Please enter a number">
-                        </div>
+                            <label for="bookPages">Number of pages</label>
+                          </div>
                     </div>
-                    <label>
+                    <label id="selectLabel">
                       Have you read this book?:
                       <select>
                         <option value="default">Choose…</option>
@@ -46,21 +45,22 @@
                       </select>
                     </label>
                   </p>
-                  <div>
-                    <button value="cancel" formmethod="dialog">Cancel</button>
+                  <div class="formBtns">
+                    <button id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
                     <button id="confirmBtn" value="default">Confirm</button>
                   </div>
                 </form>
               </dialog>
             <p>
               <button id="showDialog">+</button>
-            </p>   
+            </p>
+          </div>   
   <div id="outputSection"></div>  
-        <!-- <div class="footer">
+        <div class="footer">
             <h5>Designed and built by Phil Pell</h5>
             <a href="https://github.com/philpell/library"><img id="githubLogo" src="images/gitHubLogo.jpg" alt="github Logo"></a>
-        </div> -->
-    </div>
+        </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
