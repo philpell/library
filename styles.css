@@ -19,11 +19,12 @@
 body {
   background-color: var(--contrastBlue);
   padding: 10px;
+  font-family: var(--font-family);
 }
 
 .container {
   display: grid;
-  grid-template-rows: 15vh 35vh 40vh 5vh;
+  grid-template-rows: 15vh auto 5vh;
   grid-template-columns: repeat(3, 1fr);
 }
  
@@ -33,7 +34,7 @@ body {
 }
 
 .inputSection {
-  grid-row: 1 / 4;
+  grid-row: 1 / 3;
   grid-column: 3 / 4;
 }
 
@@ -41,14 +42,10 @@ body {
   background-image: url(images/CompellingLogoTen.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
-  margin: 10px 10px 0px 8px;
-  height: 15vh;
-  width: 45vh;
+  height: 16vh;
+  width: 55vh;
   border-radius: 5px;
   cursor: pointer;
-  position: absolute;
-  top: 2%;
-  left: 2%;
 }
 
 /* Set up for main form section */
@@ -56,7 +53,6 @@ legend{
     text-align: center;
     font-size: 20px;
     font-weight: 700;
-    font-family: var(--font-family);
     color: var(--font-color);
     margin-top: 10px;
 }
@@ -66,7 +62,6 @@ h6{
   margin: 2px 0 7px;
   font-size: 15px;
   font-weight: 500;
-  font-family: var(--font-family);
   color: var(--font-color);
 }
 
@@ -80,6 +75,7 @@ h6{
   position: absolute;
   top: 3%;
   right: 2%;
+  width: 3.5vw;
 }
 
 #searchBtn {
@@ -91,6 +87,7 @@ h6{
   margin: 20px 0px 0px 10px;
   border-radius: 10px;
   color: var(--font-color);
+  width: 7.3vw;
 }
 
 #cancelBtn, #confirmBtn {
@@ -99,10 +96,32 @@ h6{
   font-weight: 700;
   width: 12vw;
   padding: 7px 10px;
-  margin: 3pc 0pc 0pc 1pc;
+  margin: 3pc 0pc 1pc 1pc;
   border-radius: 10px;
   color: var(--font-color);
   position: relative;
+}
+
+button {
+  font-size: 16px;
+  color: var(--font-color);
+  width: 90%;
+  border-radius: 10px;
+  padding: 10px 0px;
+  margin: 10px;
+  font-weight: 700;
+}
+
+
+
+#deleteBtn:hover {
+  cursor: pointer;
+  background-color: darkred;
+}
+
+#readBtn:hover {
+  cursor: pointer;
+  background-color: var(--logo-blue);
 }
 
 /* Search bar formatting */
@@ -113,6 +132,7 @@ h6{
   border-radius: 10px;
   color: white;
   border: none;
+  margin-left: 80px;
 }
   
 #searchBar input[type=text]:active {
@@ -136,6 +156,13 @@ h6{
   }
 }
 
+  #searchResults {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+  }
+
+
   /* Formatting for selection of form sections */
   input {
     border: none;
@@ -149,7 +176,7 @@ h6{
   /* Set underline to blue */
   input:focus {
     outline: none;
-    border-bottom: 2px solid var(--font-color);
+    border-bottom: 2px solid var(--logo-blue);
 }
 
   label {
@@ -157,9 +184,9 @@ h6{
     position: relative;
     top: 10px;
     transition: all .3s ease-in;
-    line-height: 20px;
+    line-height: 30px;
     color: var(--font-color);
-    font-family: var(--font-family);
+
 }
 
   #selectLabel {
@@ -169,7 +196,6 @@ h6{
     top: 20px;
     line-height: 20px;
     color: var(--font-color);
-    font-family: var(--font-family);
   }
 
   select  {
@@ -178,20 +204,17 @@ h6{
     left: 35px;
     line-height: 20px;
     color: var(--font-color);
-    font-family: var(--font-family);
     border-radius: 5px;
 }
 
   dialog:modal {
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 65%;
     width: 27.5vw;
-    height: 65vh;
     border-radius: 20px;
-    border: none;
     align-items: center;
-    outline: var(--logo-blue) solid 6px;
+    border: 1px solid var(--logo-blue);
     user-select: text;
     visibility: visible;
     overflow: auto;
@@ -245,9 +268,28 @@ h6{
     cursor: pointer;
 }
 
+  /* Output formatting */
+  #outputSection {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 50px;
+  }
+
+  h1 {
+    color: var(--contrastBlue);
+    font-size: 24px;
+    text-align: center;
+    margin: -50px 0px 0px;
+    position: absolute;
+    left: 22vw;
+  }
+
   /* Footer formatting including github link and text formatting */
   .footer {
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     grid-column: 1 / 4;
     background-color: var(--contrastBlue);
     height: 5%;
@@ -255,7 +297,8 @@ h6{
  
   #githubLogo {
     position: absolute;
-    right: 1.5%;
+    right: 0.5vw;
+    top: 90vh;
     height: 4vh;
     background-blend-mode: lighten;
     border-radius: 50%;
@@ -263,13 +306,15 @@ h6{
  
   h5 {
     position: absolute;
-    bottom: 4%;
-    right: 4%;
+    right: 1vw;
+    top: 53vh;
+    height: 15vw;
+    width: 1vw;
     font-size: 13px;
     visibility: hidden;
+    writing-mode: vertical-lr;
     background-color: var(--contrastBlue);
     color: var(--font-color);
-    font-family: var(--font-family);
     font-weight: 700;
     opacity: 0;
     transition: opacity 1s, visibility 1s;

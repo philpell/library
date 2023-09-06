@@ -24,8 +24,8 @@
                     <h6>(Please complete all sections below)</h6>
                     <div class="bookData">
                         <div class="field">
-                            <input type="text" name="bookName" id="bookName" placeholder="e.g. The Hobbit">
-                            <label for="bookName">Name of book:</label>
+                            <input type="text" name="bookTitle" id="bookTitle" placeholder="e.g. The Hobbit">
+                            <label for="bookTitle">Title of book:</label>
                         </div>
                         <div class="field">
                             <input type="text" name="bookAuthor" id="bookAuthor" placeholder="e.g. J.R.R Tolkein">
@@ -40,8 +40,8 @@
                       Have you read this book?:
                       <select>
                         <option value="default">Choose…</option>
-                        <option>Read</option>
-                        <option>Not read</option>
+                        <option>read</option>
+                        <option>not read</option>
                       </select>
                     </label>
                   </p>
@@ -55,7 +55,9 @@
               <button id="showDialog">+</button>
             </p>
           </div>   
-  <div id="outputSection"></div>  
+  <div id="outputSection">
+    <h1 id="libraryHeader">Your book library</h1>
+  </div>  
         <div class="footer">
             <h5>Designed and built by Phil Pell</h5>
             <a href="https://github.com/philpell/library"><img id="githubLogo" src="images/gitHubLogo.jpg" alt="github Logo"></a>
