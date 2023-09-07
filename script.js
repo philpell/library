@@ -99,23 +99,29 @@ function addNewBook(){
 
   //set button colour based on status
   if(readBtn.textContent.trim() === 'read'){
-    readBtn.style.backgroundColor = '#003400';
+    readBtn.style.backgroundImage = 'linear-gradient(#00c900, #187a00)';
+    readBtn.style.border = 'rgb(0, 37, 3) solid 1px;';
 } else if(readBtn.textContent.trim() === 'not read'){
-    readBtn.style.backgroundColor = '#0e0044';
+    readBtn.style.backgroundImage = 'linear-gradient(#0d00c9, #00087a)';
+    readBtn.style.border = 'rgb(3, 0, 48) solid 1px';
 }
     
   //Add eventlistener to the read button to set colour
   readBtn.addEventListener("click", function(){ 
     let id = readBtn.getAttribute('id')
     let x = library.findIndex(o => o.title === id); //finds relevant object in the library
+    
     if(readBtn.textContent.trim() === 'read'){
       library[x].read ="not read"; //changes object's read status within library
       readBtn.textContent = 'not read';//changes button text
-      readBtn.style.backgroundColor = '#0e0044';//changes button colour
+      readBtn.style.backgroundImage = 'linear-gradient(#0d00c9, #00087a)';//changes button colour
+      readBtn.style.border = 'rgb(3, 0, 48) solid 1px';
+
   } else if(readBtn.textContent.trim() === 'not read'){
       library[x].read ="read";
       readBtn.textContent = 'read';
-      readBtn.style.backgroundColor = '#003400';
+      readBtn.style.backgroundImage = 'linear-gradient(#00c900, #187a00)';
+      readBtn.style.border = 'rgb(0, 37, 3) solid 1px;';
 }}
 )}
 
